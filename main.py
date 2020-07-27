@@ -2,6 +2,8 @@ import sys
 
 from sunriseSunset import *
 from sunrisetime import *
+
+
 class MyForm(QtGui.QDialog):
     def __init__(self, parent=None):
         QtGui.QWidget.__init__(self, parent)
@@ -17,8 +19,8 @@ class MyForm(QtGui.QDialog):
         self.setPicture()
 
     def showlcd(self):
-        currentTimelcd = QtCore.QTime.currentTime()
-        currentTimelcdText = currentTimelcd.toString('hh:mm:ss')
+        currentTimeLCD = QtCore.QTime.currentTime()
+        currentTimelcdText = currentTimeLCD.toString('hh:mm:ss')
         self.ui.currentTimeLCD.display(currentTimelcdText)
 
     def showlcd_sunrise(self):
@@ -64,17 +66,18 @@ class MyForm(QtGui.QDialog):
     def setPicture(self):
         currentTime = QtCore.QTime.currentTime()
         intCurrentTime = currentTime.hour() * 3600 + currentTime.minute() * 60 + currentTime.second()
-        dayTime = QtCore.QTime(5, 00, 00)
-        intDayTime = dayTime.hour() * 3600 + dayTime.minute() * 60 + dayTime.second()
-        nightTime = QtCore.QTime(19,00,00)
-        intNightTime = nightTime.hour() * 3600 + nightTime.minute() * 60 + nightTime.second()
+        mockUpTime = QtCore.QTime(19, 00,00)
+        intmockUpTime = mockUpTime.hour() * 3600 + mockUpTime.minute() * 60 + mockUpTime.second()
+        sunriseTime = QtCore.QTime.fromString(sunriseUtc2,"hh:mm:ss")
+        intSunriseTime = sunriseTime.hour() * 3600 + sunriseTime.minute() * 60 + sunriseTime.second()
+        sunsetTime = QtCore.QTime.fromString(sunsetUtc2, "hh:mm:ss")
+        intSunsetTime = sunsetTime.hour() * 3600 + sunsetTime.minute() * 60 + sunsetTime.second()
 
-        if(intCurrentTime >= intNightTime):
+        if (intCurrentTime >= intSunsetTime):
             self.ui.dayOrNightLabel.setText("Have a good night!")
             self.ui.dayOrNightPic.setPixmap(QtGui.QPixmap("img/NightTime.jpeg"))
         else:
-            self.ui.dayOrNightLabel.setText("Have good day!")
-
+            self.ui.dayOrNightLabel.setText("Have a good day!")
 
 
 if __name__ == "__main__":

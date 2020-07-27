@@ -6,21 +6,62 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>809</width>
-    <height>565</height>
+    <width>965</width>
+    <height>573</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Sunrises and Sunsets</string>
   </property>
+  <widget class="QSplitter" name="dayNightSplitter">
+   <property name="geometry">
+    <rect>
+     <x>510</x>
+     <y>60</y>
+     <width>421</width>
+     <height>331</height>
+    </rect>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Vertical</enum>
+   </property>
+   <widget class="QLabel" name="dayOrNightLabel">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="dayOrNightPic">
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>img/DayTime.jpeg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
   <widget class="QGroupBox" name="studentInfoLayout">
    <property name="geometry">
     <rect>
      <x>510</x>
-     <y>450</y>
-     <width>291</width>
-     <height>111</height>
+     <y>420</y>
+     <width>421</width>
+     <height>141</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
    </property>
    <property name="title">
     <string>Student Information</string>
@@ -30,8 +71,8 @@
      <rect>
       <x>20</x>
       <y>30</y>
-      <width>261</width>
-      <height>71</height>
+      <width>391</width>
+      <height>101</height>
      </rect>
     </property>
     <layout class="QHBoxLayout" name="studentLayout">
@@ -63,6 +104,12 @@
          <property name="enabled">
           <bool>false</bool>
          </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
           <string>Daniel du Preez</string>
          </property>
@@ -72,6 +119,12 @@
         <widget class="QLineEdit" name="studNumLable">
          <property name="enabled">
           <bool>false</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
          </property>
          <property name="text">
           <string>64245179</string>
@@ -83,129 +136,91 @@
     </layout>
    </widget>
   </widget>
-  <widget class="QWidget" name="layoutWidget">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>60</x>
-     <y>200</y>
-     <width>131</width>
-     <height>101</height>
+     <x>33</x>
+     <y>233</y>
+     <width>461</width>
+     <height>321</height>
     </rect>
    </property>
-   <layout class="QVBoxLayout" name="sunriseLayout">
-    <item>
+   <layout class="QGridLayout" name="timesGridLayout">
+    <item row="0" column="0">
      <widget class="QLabel" name="sunriseLabel">
       <property name="text">
        <string>Sunrise</string>
       </property>
      </widget>
     </item>
-    <item>
-     <widget class="QLCDNumber" name="sunriseLCD">
-      <property name="digitCount">
-       <number>8</number>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_2">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>360</y>
-     <width>131</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="sunsetLayout">
-    <item>
-     <widget class="QLabel" name="sunseLabel">
-      <property name="text">
-       <string>Sunset</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLCDNumber" name="sunsetLCD">
-      <property name="digitCount">
-       <number>8</number>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>60</x>
-     <y>50</y>
-     <width>131</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="currentTimeLayout">
-    <item>
-     <widget class="QLabel" name="currentTimeLabel">
-      <property name="text">
-       <string>Current time</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLCDNumber" name="currentTimeLCD">
-      <property name="digitCount">
-       <number>8</number>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_3">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>360</y>
-     <width>131</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="timeToSunsetLayout">
-    <item>
-     <widget class="QLabel" name="timeToSunsetLabel">
-      <property name="text">
-       <string>Time to Sunset</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLCDNumber" name="timeToSunsetLCD">
-      <property name="digitCount">
-       <number>8</number>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QWidget" name="layoutWidget_4">
-   <property name="geometry">
-    <rect>
-     <x>220</x>
-     <y>200</y>
-     <width>131</width>
-     <height>101</height>
-    </rect>
-   </property>
-   <layout class="QVBoxLayout" name="timeFromSunriseLayout">
-    <item>
+    <item row="0" column="1">
      <widget class="QLabel" name="timeFromSunriseLabel">
       <property name="text">
        <string>Time from Sunrise</string>
       </property>
      </widget>
     </item>
-    <item>
+    <item row="1" column="0">
+     <widget class="QLCDNumber" name="sunriseLCD">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="digitCount">
+       <number>8</number>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
      <widget class="QLCDNumber" name="timeFromSunriseLCD">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="digitCount">
+       <number>8</number>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="sunsetLabel">
+      <property name="text">
+       <string>Sunset</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="timeToSunsetLabel">
+      <property name="text">
+       <string>Time to Sunset</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLCDNumber" name="sunsetLCD">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="digitCount">
+       <number>8</number>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLCDNumber" name="timeToSunsetLCD">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="digitCount">
        <number>8</number>
       </property>
@@ -213,36 +228,42 @@
     </item>
    </layout>
   </widget>
-  <widget class="QSplitter" name="splitter">
+  <widget class="QWidget" name="">
    <property name="geometry">
     <rect>
-     <x>460</x>
-     <y>41</y>
-     <width>301</width>
-     <height>311</height>
+     <x>33</x>
+     <y>63</y>
+     <width>461</width>
+     <height>151</height>
     </rect>
    </property>
-   <property name="orientation">
-    <enum>Qt::Vertical</enum>
-   </property>
-   <widget class="QLabel" name="dayOrNightLabel">
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="dayOrNightPic">
-    <property name="text">
-     <string/>
-    </property>
-    <property name="pixmap">
-     <pixmap>img/DayTime.jpeg</pixmap>
-    </property>
-   </widget>
+   <layout class="QVBoxLayout" name="currentTimeLayout">
+    <item>
+     <widget class="QLabel" name="currentTimeLabel">
+      <property name="text">
+       <string>Current Time</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLCDNumber" name="currentTimeLCD">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="digitCount">
+       <number>8</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
   </widget>
+  <zorder>layoutWidget</zorder>
+  <zorder>studentInfoDayNightSplitter</zorder>
+  <zorder>timeToSunsetLabel</zorder>
  </widget>
- <resources>
-  <include location="img/NightTime.qrc"/>
-  <include location="img/DayTime.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
